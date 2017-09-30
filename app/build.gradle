@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+/**采用解析Properties文件获取签名信息的方式，把签名放进版本控制不是明智的做法*/
+Properties props = new Properties();
+props.load(new FileInputStream(file("signing.properties")))
+android {
+    signingConfigs {//签名文件配置
+        debug {
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD']
+            storeFile file(props['STORE_FILE'])
+            storePassword props['STORE_PASSWORD']
+        }
+        release {
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD']
+            storeFile file(props['STORE_FILE'])
+            storePassword props['STORE_PASSWORD']
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.example.ecaray.myapplication"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {//编译类型
+        release {
+            minifyEnabled false//是否开启混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(output.outputFile.parent,
+                    output.outputFile.name
+                            .replace("experiment", defaultConfig.versionCode
+                            + "_" + "v" + defaultConfig.versionName + "_" + "测试环境")
+                            .replace("app", "pda")
+            )
+        }
+    }
+
+
+    productFlavors {
+        beijing {
+            versionCode 3
+            versionName "1.0.3"
+            applicationIdSuffix ".bj"
+            manifestPlaceholders = [App_Name: "beijing haha"]
+            buildConfigField "String", "App_Name", '"北京haha"'
+        }
+
+        shenzhen {
+            versionCode 5
+            versionName "1.0.5"
+            applicationIdSuffix ".sz"
+            manifestPlaceholders = [App_Name: "shenzhen haha"]
+            buildConfigField "String", "App_Name", '"深圳haha"'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
