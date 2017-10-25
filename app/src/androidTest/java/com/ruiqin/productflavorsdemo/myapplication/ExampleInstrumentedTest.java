@@ -1,4 +1,4 @@
-package com.example.ecaray.myapplication;
+package com.ruiqin.productflavorsdemo.myapplication;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.example.ecaray.myapplication;
+package com.ruiqin.productflavorsdemo.myapplication;
 
 import org.junit.Test;
 
