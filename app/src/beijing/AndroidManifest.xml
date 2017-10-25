@@ -10,10 +10,7 @@
             />
         <activity android:name=".TestActivity">
             <intent-filter>
-                <data
-                    android:host="beijing"
-                    android:scheme="content"/>
-                <action android:name="TestBaseActivity"/>
+                <action android:name="${applicationId}.TestBaseActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>

@@ -17,10 +17,7 @@
         </activity>
         <activity android:name=".TestBaseActivity">
             <intent-filter>
-                <data
-                    android:host="main"
-                    android:scheme="content"/>
-                <action android:name="TestBaseActivity"/>
+                <action android:name="${applicationId}.TestBaseActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
