@@ -67,6 +67,14 @@ android {
             manifestPlaceholders = [App_Name: "shenzhen haha"]
             buildConfigField "String", "App_Name", '"深圳haha"'
         }
+
+        guangzhou {
+            versionCode 5
+            versionName "1.0.5"
+            applicationIdSuffix ".gz"
+            manifestPlaceholders = [App_Name: "guangzhou haha"]
+            buildConfigField "String", "App_Name", '"广州haha"'
+        }
     }
 }
 
