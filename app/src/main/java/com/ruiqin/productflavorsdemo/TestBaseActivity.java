@@ -9,12 +9,6 @@ import android.widget.TextView;
 
 public class TestBaseActivity extends AppCompatActivity {
 
-    public static void startActivity(Context context) {
-        Intent intent = new Intent();
-        intent.setAction(BuildConfig.APPLICATION_ID + ".TestBaseActivity");
-        context.startActivity(intent);
-    }
-
 
     TextView mTextView;
 
