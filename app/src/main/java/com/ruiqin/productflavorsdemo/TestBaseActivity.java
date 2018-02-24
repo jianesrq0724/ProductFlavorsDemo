@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/test/TestBaseActivity1", priority = 2)
+@Route(path = "/test/TestBaseActivity", priority = 1)
 public class TestBaseActivity extends AppCompatActivity {
 
 

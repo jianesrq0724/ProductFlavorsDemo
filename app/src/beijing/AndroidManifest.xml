@@ -3,7 +3,8 @@
           package="com.ruiqin.productflavorsdemo">
 
     <application>
-        <activity android:name=".TestActivity"/>
+
+
     </application>
 
 </manifest>
