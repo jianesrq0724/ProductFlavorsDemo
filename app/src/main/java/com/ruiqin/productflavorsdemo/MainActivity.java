@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.Postcard;
+import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 
@@ -19,7 +21,27 @@ public class MainActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ARouter.getInstance().build("/test/TestActivity").navigation();
+                ARouter.getInstance().build("/test/TestBaseActivity").navigation(MainActivity.this, new NavigationCallback() {
+                    @Override
+                    public void onFound(Postcard postcard) {
+
+                    }
+
+                    @Override
+                    public void onLost(Postcard postcard) {
+
+                    }
+
+                    @Override
+                    public void onArrival(Postcard postcard) {
+
+                    }
+
+                    @Override
+                    public void onInterrupt(Postcard postcard) {
+
+                    }
+                });
             }
         });
     }

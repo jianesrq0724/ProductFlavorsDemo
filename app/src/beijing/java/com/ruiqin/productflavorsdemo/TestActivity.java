@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/test/TestActivity")
+@Route(path = "/test/TestBaseActivity")
 public class TestActivity extends TestBaseActivity {
 
     @Override
