@@ -19,7 +19,7 @@ android {
         }
     }
     compileSdkVersion 25
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.ruiqin.productflavorsdemo"
         minSdkVersion 15
@@ -39,18 +39,14 @@ android {
         }
     }
 
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            output.outputFile = new File(output.outputFile.parent,
-                    output.outputFile.name
-                            .replace("experiment", defaultConfig.versionCode
-                            + "_" + "v" + defaultConfig.versionName + "_" + "测试环境")
-                            .replace("app", "pda")
-            )
+    /*为apk自动替换生成新名字，格式如： [項目名]_[test/release]_[version]_[date].apk*/
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "pda-${variant.name}-v${variant.versionName}.apk"
         }
     }
 
-
+    flavorDimensions "default"
     productFlavors {
         beijing {
             versionCode 3
