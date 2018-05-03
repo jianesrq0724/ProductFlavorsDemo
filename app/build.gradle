@@ -22,7 +22,31 @@ android {
         signingConfig signingConfigs.config
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {//编译类型
+
+    buildTypes {
+
+        //开发环境
+        develop {
+            debuggable true
+            minifyEnabled false// 是否混淆
+            shrinkResources false// 是否去除无效的资源文件
+            multiDexEnabled true
+        }
+
+        //测试环境
+        experiment {
+            debuggable false
+            minifyEnabled false
+            multiDexEnabled true
+        }
+
+        //debug环境
+        debug {
+            debuggable false
+            minifyEnabled false
+            multiDexEnabled true
+        }
+
         release {
             minifyEnabled false//是否开启混淆
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
