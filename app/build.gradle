@@ -35,14 +35,14 @@ android {
 
         //测试环境
         experiment {
-            debuggable false
+            debuggable true
             minifyEnabled false
             multiDexEnabled true
         }
 
         //debug环境
         debug {
-            debuggable false
+            debuggable true
             minifyEnabled false
             multiDexEnabled true
         }

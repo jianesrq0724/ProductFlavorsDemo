@@ -6,17 +6,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.ruiqin.productflavorsdemo.util.ActivityUtils;
+
 
 public class TestBaseActivity extends AppCompatActivity {
 
     public static void startActivity(Context context) {
         Intent intent = new Intent();
-        intent.setAction(BuildConfig.APPLICATION_ID + ".TestBaseActivity");
+        String className = "com.ruiqin.productflavorsdemo.TestActivity";
+        if (!ActivityUtils.isExist(className)) {
+            className = "com.ruiqin.productflavorsdemo.TestBaseActivity";
+        }
+        intent.setClassName(BuildConfig.APPLICATION_ID, className);
         context.startActivity(intent);
     }
 
-
-    TextView mTextView;
+    public TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
