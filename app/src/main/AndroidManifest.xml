@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ruiqin.productflavorsdemo">
+          package="com.carl.productflavorsdemo">
 
     <application
         android:allowBackup="true"

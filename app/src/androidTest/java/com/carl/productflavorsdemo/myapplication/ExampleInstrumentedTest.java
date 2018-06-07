@@ -1,4 +1,4 @@
-package com.ruiqin.productflavorsdemo.myapplication;
+package com.carl.productflavorsdemo.myapplication;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.ruiqin.productflavorsdemo;
+package com.carl.productflavorsdemo;
 
 import android.content.Context;
 import android.os.Bundle;

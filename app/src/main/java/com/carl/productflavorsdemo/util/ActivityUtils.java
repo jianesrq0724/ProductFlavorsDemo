@@ -1,4 +1,4 @@
-package com.ruiqin.productflavorsdemo.util;
+package com.carl.productflavorsdemo.util;
 
 /**
  * @author Carl

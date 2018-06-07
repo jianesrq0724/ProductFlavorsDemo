@@ -1,4 +1,4 @@
-package com.ruiqin.productflavorsdemo;
+package com.carl.productflavorsdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

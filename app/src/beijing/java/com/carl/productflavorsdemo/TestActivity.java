@@ -1,8 +1,8 @@
-package com.ruiqin.productflavorsdemo;
+package com.carl.productflavorsdemo;
 
 import android.os.Bundle;
 
-import com.ruiqin.productflavorsdemo.TestBaseActivity;
+import com.carl.productflavorsdemo.TestBaseActivity;
 
 
 public class TestActivity extends TestBaseActivity {

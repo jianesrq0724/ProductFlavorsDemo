@@ -1,4 +1,4 @@
-package com.ruiqin.productflavorsdemo.myapplication;
+package com.carl.productflavorsdemo.myapplication;
 
 import org.junit.Test;
 
